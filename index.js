@@ -14,29 +14,29 @@ exports.handler = (event, context, callback) => {
 */
 
 exports.handler = function(event, context, callback) {
-  var alexa = Alexa.handler(event, context);
-  alexa.registerHandlers(handlers);
-  alexa.appId = appId;
-  alexa.dynamoDBTableName = 'ichingusers';
-  alexa.execute();
+    var alexa = Alexa.handler(event, context);
+    alexa.registerHandlers(handlers);
+    alexa.appId = appId;
+    alexa.dynamoDBTableName = 'ichingusers';
+    alexa.execute();
 };
 
 var handlers = {
     "AMAZON.StopIntent": function() {
-      this.emit(':tell', "Stop. Goodbye!");
+        var message = this.attributes['name'];
+        this.emit(':tell', "Stop. Goodbye! " + message);
     },
     "AMAZON.CancelIntent": function() {
-      this.emit(':tell', "Cancel. Goodbye!");
+        this.emit(':tell', "Cancel. Goodbye!");
     },
-    'SessionEndedRequest': function () {
-      this.emit(":tell", "Session ended. Goodbye!");
+    'SessionEndedRequest': function() {
+        this.emit(":tell", "Session ended. Goodbye!");
     },
-    'iching': function () {
+    'iching': function() {
         this.attributes['name'] = 'Dave';
         this.emit(':tell', 'Iching listens to you!');
     },
-    'Unhandled': function () {
+    'Unhandled': function() {
         this.emit(':tell', 'Unhandled!');
     }
 };
-
