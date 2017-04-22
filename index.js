@@ -22,9 +22,19 @@ exports.handler = function(event, context, callback) {
 };
 
 var handlers = {
-
-    'ichingIntent': function () {
+    "AMAZON.StopIntent": function() {
+      this.emit(':tell', "Stop. Goodbye!");
+    },
+    "AMAZON.CancelIntent": function() {
+      this.emit(':tell', "Cancel. Goodbye!");
+    },
+    'SessionEndedRequest': function () {
+      this.emit(":tell", "Session ended. Goodbye!");
+    },
+    'iching': function () {
         this.emit(':tell', 'Iching listens to you!');
+    },
+    'Unhandled': function () {
+        this.emit(':tell', 'Unhandled!');
     }
-
 };
