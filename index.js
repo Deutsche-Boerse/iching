@@ -32,9 +32,11 @@ var handlers = {
       this.emit(":tell", "Session ended. Goodbye!");
     },
     'iching': function () {
+        this.attributes['name'] = 'Dave';
         this.emit(':tell', 'Iching listens to you!');
     },
     'Unhandled': function () {
         this.emit(':tell', 'Unhandled!');
     }
 };
+
