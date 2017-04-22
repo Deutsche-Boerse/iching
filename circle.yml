@@ -18,5 +18,5 @@ deployment:
   master:
     branch: master
     commands:
-      - zip updateapp.zip *
+      - zip -r updateapp.zip *
       - aws lambda update-function-code --zip-file fileb://updateapp.zip --function-name iching --region eu-west-1
