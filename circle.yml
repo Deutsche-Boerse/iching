@@ -12,7 +12,7 @@ dependencies:
 
 test:
   override:
-    - ll ~/iching/node_modules
+    - ls ~/iching/node_modules
 
 deployment:
   master:
