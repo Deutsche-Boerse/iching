@@ -1,0 +1,9 @@
+{
+  "name": "iching oaas",
+  "version": "0.1",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "alexa-sdk": "^1.0.8"
+  }
+}
