@@ -1,0 +1,22 @@
+machine:
+  environment:
+    PATH: $HOME/.cache/bin:$PATH
+    PROJECT: "$HOME/iching"
+
+dependencies:
+  override:
+    - npm install
+
+  cache_directories:
+    - "~/.cache"
+
+test:
+  override:
+    - echo hello
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - zip updateapp.zip *
+      - aws lambda update-function-code --zip-file fileb://updateapp.zip --function-name iching --region eu-west-1
