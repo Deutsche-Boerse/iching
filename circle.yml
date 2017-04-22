@@ -12,7 +12,7 @@ dependencies:
 
 test:
   override:
-    - echo hello
+    - ll ~/iching/node_modules
 
 deployment:
   master:
