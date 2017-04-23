@@ -24,7 +24,7 @@ var handlers = {
     },
     'iching': function() {
         this.attributes['name'] = 'Dave'; // This saves to DynamoDB a value 'Dave' to column 'name'.
-        getPrice.apiCall('DE0008404005'); //
+        apiCall.getPrice('DE0008404005'); //
         this.emit(':tell', 'Iching listens to you!');
     },
     'Unhandled': function() {

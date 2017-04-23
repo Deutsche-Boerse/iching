@@ -1,4 +1,4 @@
-exports.getPrice = function(callback) {
+exports.getPrice = function(isin) {
 /*
     function SessionConnect(callback) {
         var dataString = JSON.stringify('');
