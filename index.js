@@ -24,7 +24,7 @@ var handlers = {
     },
     'iching': function() {
         this.attributes['name'] = 'Dave'; // This saves to DynamoDB a value 'Dave' to column 'name'.
-        var ision = 'DE0008404005';
+        var isin = 'DE0008404005';
         apiCall.getPrice(isin); //
         this.emit(':tell', 'Iching listens to you! ' + isin);
     },
