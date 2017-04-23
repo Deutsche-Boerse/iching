@@ -59,7 +59,7 @@ exports.getPrice = function(isin) {
 
         notFound = "NO";
 
-        var endpoint = '/papers/' + isin + '?type=short';
+        var endpoint = '/papers/DE0008404005?type=short';
 
         headers = {
             'Authorization': 'ebd93488-6362-470a-b353-cf8c740178fb'
@@ -86,6 +86,7 @@ exports.getPrice = function(isin) {
                     notFound = "YES";
                 } else {
                     var responseObject = JSON.parse(responseString);
+                    console.log('RESPONSE OBJECT: ' + responseObject)
                     var exchange = "";
                     exchange = responseObject.listings[0].exchangeSymbol;
                     if (sharetype === "equity") {
@@ -107,6 +108,7 @@ exports.getPrice = function(isin) {
                     sharetime = sharetime[0].split("-");
                     sharetime = sharetime[0] + sharetime[1] + sharetime[2];
                 }
+                console.log('SHAREPRICE: ' + shareprice);
                 callback(shareprice);
             });
 
