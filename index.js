@@ -1,7 +1,7 @@
 'use strict';
 var Alexa = require('alexa-sdk');
 var appId = process.env.APPID; // Set as environmental variable in Lambda itself.
-var apiCall = require('bf_api.js');
+var apiCall = require('./bf_api.js');
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
