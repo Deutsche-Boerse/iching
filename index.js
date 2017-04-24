@@ -28,6 +28,9 @@ var handlers = {
         apiCall.getPrice(isin); //
         this.emit(':tell', 'Iching listens to you! ' + isin);
     },
+    'wait': function() {
+        this.emit(':ask', 'What would you like to know? Ask me!');
+    },
     'Unhandled': function() {
         this.emit(':tell', 'Unhandled!');
     }

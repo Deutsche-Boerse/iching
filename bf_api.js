@@ -1,5 +1,12 @@
 exports.getPrice = function(isin) {
-/*
+
+    return new Promise(function(done) {
+        SessionConnect(isin).then(function(sessionId) {
+        GetShareInformation(sessionId);
+        done(sharePrice);
+        }
+    };
+
     function SessionConnect(callback) {
         var dataString = JSON.stringify('');
         var headers = {};
@@ -50,7 +57,7 @@ exports.getPrice = function(isin) {
 
         } // end if sessioId != null
     }
-*/
+
 
     function GetShareInformation(callback) {
         var dataString = JSON.stringify('');
