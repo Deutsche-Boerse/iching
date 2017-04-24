@@ -4,7 +4,10 @@ exports.getPrice = function(isin) {
         SessionConnect(isin).then(function(sessionId) {
         GetShareInformation(sessionId);
         done(sharePrice);
-        }
+        }.catch(function(err) {
+            console.log(err);
+            done(err);
+        });
     };
 
     function SessionConnect(callback) {
